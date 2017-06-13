@@ -1,7 +1,7 @@
 /// <reference path="main.ts"/>
 
 class Game{
-    private startGame:startGame; // starts the game
+    public startGame:startGame; // starts the game
     private div:HTMLElement; // button to create game
     private ingredients:Ingredients
 

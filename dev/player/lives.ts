@@ -6,13 +6,17 @@ class Lives{
 
     constructor(){
         console.log("You start with "+ this.live + " lives, good luck!")
-        this.loseLives();
-        console.log(this.live)
     }
 
     // wrong combination, lose 1 live
-    private loseLives(){
+    public loseLives(){
         this.live -= 1;
+        console.log("RIP MA NIGGA" + this.live);
+
+    }
+
+    // if all lives lost, game over
+    private gameOver(){
 
     }
     

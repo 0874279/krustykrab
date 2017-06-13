@@ -12,11 +12,15 @@ class Score{
     }
 
     public getScore(){
+
+        if (this.game.question.code.length == this.game.player.answer.length){
         if (this.game.question.code.toString() == this.game.player.answer.toString()){
             console.log("Correct!");
         }
         else{
-            console.log("go F yourself");
+            this.game.player.lives.loseLives();
         }
+    }
+    
     }
 }

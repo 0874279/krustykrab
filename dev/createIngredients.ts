@@ -41,7 +41,6 @@ class createIngredients{
             this.game.player.y < this.bread.y + this.bread.height &&
             this.game.player.height + this.game.player.y > this.bread.y && this.breadB == true) {
                 this.breadB = false;
-                console.log("Testinggggbread")
                 this.game.player.answer.push(this.bread.key);
                 console.log(this.game.player.answer)
             }  
@@ -53,7 +52,6 @@ class createIngredients{
             this.game.player.y < this.cheese.y + this.cheese.height &&
             this.game.player.height + this.game.player.y > this.cheese.y && this.cheeseB == true) {
                 this.cheeseB = false;
-                console.log("Testinggggcheeeseee")
                 this.game.player.answer.push(this.cheese.key);
                 console.log(this.game.player.answer)
             }  
@@ -65,7 +63,6 @@ class createIngredients{
             this.game.player.y < this.ketchup.y + this.ketchup.height &&
             this.game.player.height + this.game.player.y > this.ketchup.y && this.ketchupB == true) {
                 this.ketchupB = false;
-                console.log("Testinggggketchup")
                 this.game.player.answer.push(this.ketchup.key);
                 console.log(this.game.player.answer)
             }  
@@ -77,7 +74,6 @@ class createIngredients{
             this.game.player.y < this.lettuce.y + this.lettuce.height &&
             this.game.player.height + this.game.player.y > this.lettuce.y && this.lettuceB == true) {
                 this.lettuceB = false;
-                console.log("Testingggglettuce")
                 this.game.player.answer.push(this.lettuce.key);
                 console.log(this.game.player.answer)
             }  
@@ -89,7 +85,6 @@ class createIngredients{
             this.game.player.y < this.mustard.y + this.mustard.height &&
             this.game.player.height + this.game.player.y > this.mustard.y && this.mustardB == true) {
                 this.mustardB = false;
-                console.log("Testinggggmustard")
                 this.game.player.answer.push(this.mustard.key);
                 console.log(this.game.player.answer)
             }  
@@ -101,7 +96,6 @@ class createIngredients{
             this.game.player.y < this.patty.y + this.patty.height &&
             this.game.player.height + this.game.player.y > this.patty.y && this.pattyB == true) {
                 this.pattyB = false;
-                console.log("Testinggggkpatty")
                 this.game.player.answer.push(this.patty.key);
                 console.log(this.game.player.answer)
             }  
@@ -113,7 +107,6 @@ class createIngredients{
             this.game.player.y < this.pickles.y + this.pickles.height &&
             this.game.player.height + this.game.player.y > this.pickles.y && this.picklesB == true) {
                 this.picklesB = false;
-                console.log("Testinggggpickles")
                 this.game.player.answer.push(this.pickles.key);
                 console.log(this.game.player.answer)
             }  
@@ -125,7 +118,6 @@ class createIngredients{
             this.game.player.y < this.tomatoes.y + this.tomatoes.height &&
             this.game.player.height + this.game.player.y > this.tomatoes.y && this.tomatoesB == true) {
                 this.tomatoesB = false;
-                console.log("Testinggggtomatoes")
                 this.game.player.answer.push(this.tomatoes.key);
                 console.log(this.game.player.answer)
             }  

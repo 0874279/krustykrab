@@ -4,7 +4,7 @@ class Player{
 
     private div:HTMLElement; // player div
     public score:Score; // score
-    private lives:Lives; // lives
+    public lives:Lives; // lives
     public answer:Array<number> = []; // player answer
 
     // position
