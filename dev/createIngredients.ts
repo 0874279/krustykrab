@@ -35,7 +35,7 @@ class createIngredients{
         this.tomatoes = new Tomatoes;
     }
 
-    takeBread(){
+    public takeBread(){
         if (this.game.player.x < this.bread.x + this.bread.width &&
             this.game.player.x + this.game.player.width > this.bread.x &&
             this.game.player.y < this.bread.y + this.bread.height &&
@@ -46,7 +46,7 @@ class createIngredients{
             }  
     }
 
-    takeCheese(){
+    public takeCheese(){
         if (this.game.player.x < this.cheese.x + this.cheese.width &&
             this.game.player.x + this.game.player.width > this.cheese.x &&
             this.game.player.y < this.cheese.y + this.cheese.height &&
@@ -57,7 +57,7 @@ class createIngredients{
             }  
     }
 
-    takeKetchup(){
+    public takeKetchup(){
         if (this.game.player.x < this.ketchup.x + this.ketchup.width &&
             this.game.player.x + this.game.player.width > this.ketchup.x &&
             this.game.player.y < this.ketchup.y + this.ketchup.height &&
@@ -68,7 +68,7 @@ class createIngredients{
             }  
     }
 
-    takeLettuce(){
+    public takeLettuce(){
         if (this.game.player.x < this.lettuce.x + this.lettuce.width &&
             this.game.player.x + this.game.player.width > this.lettuce.x &&
             this.game.player.y < this.lettuce.y + this.lettuce.height &&
@@ -79,7 +79,7 @@ class createIngredients{
             }  
     }
 
-    takeMustard(){
+    public takeMustard(){
         if (this.game.player.x < this.mustard.x + this.mustard.width &&
             this.game.player.x + this.game.player.width > this.mustard.x &&
             this.game.player.y < this.mustard.y + this.mustard.height &&
@@ -90,7 +90,7 @@ class createIngredients{
             }  
     }
 
-    takePatty(){
+    public takePatty(){
         if (this.game.player.x < this.patty.x + this.patty.width &&
             this.game.player.x + this.game.player.width > this.patty.x &&
             this.game.player.y < this.patty.y + this.patty.height &&
@@ -101,7 +101,7 @@ class createIngredients{
             }  
     }
 
-    takePickles(){
+    public takePickles(){
         if (this.game.player.x < this.pickles.x + this.pickles.width &&
             this.game.player.x + this.game.player.width > this.pickles.x &&
             this.game.player.y < this.pickles.y + this.pickles.height &&
@@ -112,7 +112,7 @@ class createIngredients{
             }  
     }
     
-    takeTomatoes(){
+    public takeTomatoes(){
         if (this.game.player.x < this.tomatoes.x + this.tomatoes.width &&
             this.game.player.x + this.game.player.width > this.tomatoes.x &&
             this.game.player.y < this.tomatoes.y + this.tomatoes.height &&
@@ -121,6 +121,18 @@ class createIngredients{
                 this.game.player.answer.push(this.tomatoes.key);
                 console.log(this.game.player.answer)
             }  
+    }
+
+    // set makes sure everything can be taken again when round is over
+    public setTrue(){
+        this.breadB = true;
+        this.cheeseB = true;
+        this.ketchupB = true;
+        this.lettuceB = true;
+        this.mustardB = true;
+        this.pattyB = true;
+        this.picklesB = true;
+        this.tomatoesB = true;
     }
 
 }

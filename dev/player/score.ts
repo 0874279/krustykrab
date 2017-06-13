@@ -11,16 +11,25 @@ class Score{
         console.log("Your score is "+ this.score + ". Good luck!")
     }
 
-    public getScore(){
+    // checks if given awnser is correct
+    public checkAnswer(){
 
         if (this.game.question.code.length == this.game.player.answer.length){
         if (this.game.question.code.toString() == this.game.player.answer.toString()){
-            console.log("Correct!");
+            this.roundWon();
         }
         else{
             this.game.player.lives.loseLives();
-        }
+            }
+        }   
     }
-    
+
+    // gives player 10 points and new round
+    private roundWon(){
+        this.game.player.lives.roundOver = true;
+        this.score +=10;
+        console.log(this.score);
     }
+
+
 }

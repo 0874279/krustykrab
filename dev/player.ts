@@ -2,7 +2,7 @@
 
 class Player{
 
-    private div:HTMLElement; // player div
+    public div:HTMLElement; // player div
     public score:Score; // score
     public lives:Lives; // lives
     public answer:Array<number> = []; // player answer

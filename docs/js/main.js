@@ -108,6 +108,16 @@ var createIngredients = (function () {
             console.log(this.game.player.answer);
         }
     };
+    createIngredients.prototype.setTrue = function () {
+        this.breadB = true;
+        this.cheeseB = true;
+        this.ketchupB = true;
+        this.lettuceB = true;
+        this.mustardB = true;
+        this.pattyB = true;
+        this.picklesB = true;
+        this.tomatoesB = true;
+    };
     return createIngredients;
 }());
 window.addEventListener("load", function () {
@@ -150,7 +160,7 @@ var startGame = (function () {
     }
     startGame.prototype.gameLoop = function () {
         this.player.move();
-        this.player.score.getScore();
+        this.player.score.checkAnswer();
         this.createIngredients.takeBread();
         this.createIngredients.takeCheese();
         this.createIngredients.takeKetchup();
@@ -159,7 +169,26 @@ var startGame = (function () {
         this.createIngredients.takePatty();
         this.createIngredients.takePickles();
         this.createIngredients.takeTomatoes();
-        requestAnimationFrame(this.gameLoop.bind(this));
+        if (this.player.lives.roundOver == true) {
+            if (this.player.lives.live > 0) {
+                console.log("New round should start!");
+                this.question.code = [];
+                this.player.answer = [];
+                this.player.lives.roundOver = false;
+                this.question = new Question;
+                this.createIngredients.setTrue();
+                console.log(this.player.answer);
+                this.player.x = 0;
+                this.player.y = 0;
+                requestAnimationFrame(this.gameLoop.bind(this));
+            }
+            else {
+                console.log("game over");
+            }
+        }
+        else {
+            requestAnimationFrame(this.gameLoop.bind(this));
+        }
     };
     return startGame;
 }());
@@ -351,11 +380,13 @@ var Tomatoes = (function (_super) {
 var Lives = (function () {
     function Lives() {
         this.live = 3;
+        this.roundOver = false;
         console.log("You start with " + this.live + " lives, good luck!");
     }
     Lives.prototype.loseLives = function () {
         this.live -= 1;
         console.log("RIP MA NIGGA" + this.live);
+        this.roundOver = true;
     };
     Lives.prototype.gameOver = function () {
     };
@@ -367,15 +398,20 @@ var Score = (function () {
         this.game = g;
         console.log("Your score is " + this.score + ". Good luck!");
     }
-    Score.prototype.getScore = function () {
+    Score.prototype.checkAnswer = function () {
         if (this.game.question.code.length == this.game.player.answer.length) {
             if (this.game.question.code.toString() == this.game.player.answer.toString()) {
-                console.log("Correct!");
+                this.roundWon();
             }
             else {
                 this.game.player.lives.loseLives();
             }
         }
+    };
+    Score.prototype.roundWon = function () {
+        this.game.player.lives.roundOver = true;
+        this.score += 10;
+        console.log(this.score);
     };
     return Score;
 }());
