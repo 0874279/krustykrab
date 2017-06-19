@@ -8,7 +8,13 @@ class Score{
 
     constructor(g:startGame){
         this.game=g;
-        console.log("Your score is "+ this.score + ". Good luck!")
+        this.createDiv(this.score);
+    }
+
+    private createDiv(score){ // creates score div
+        this.div = document.createElement("score");
+        document.body.appendChild(this.div).innerHTML=score;
+        console.log("wordt deze geprint?")
     }
 
     // checks if given awnser is correct
@@ -28,8 +34,18 @@ class Score{
     private roundWon(){
         this.game.player.lives.roundOver = true;
         this.score +=10;
-        console.log(this.score);
+        this.updateScore(this.score)
     }
+
+    // updates scorediv
+    private updateScore(score){
+        this.div.remove();
+        console.log("remove div")
+        this.div = document.createElement("score");
+        document.body.appendChild(this.div).innerHTML=score;
+    }
+
+
 
 
 }

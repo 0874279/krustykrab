@@ -152,7 +152,7 @@ var Ingredients = (function () {
 }());
 var startGame = (function () {
     function startGame() {
-        console.log("Welcome to the new game!");
+        console.log("Welcome to Krusty Krab!");
         this.createIngredients = new createIngredients(this);
         this.player = new Player(this);
         this.question = new Question;
@@ -396,8 +396,13 @@ var Score = (function () {
     function Score(g) {
         this.score = 0;
         this.game = g;
-        console.log("Your score is " + this.score + ". Good luck!");
+        this.createDiv(this.score);
     }
+    Score.prototype.createDiv = function (score) {
+        this.div = document.createElement("score");
+        document.body.appendChild(this.div).innerHTML = score;
+        console.log("wordt deze geprint?");
+    };
     Score.prototype.checkAnswer = function () {
         if (this.game.question.code.length == this.game.player.answer.length) {
             if (this.game.question.code.toString() == this.game.player.answer.toString()) {
@@ -411,7 +416,13 @@ var Score = (function () {
     Score.prototype.roundWon = function () {
         this.game.player.lives.roundOver = true;
         this.score += 10;
-        console.log(this.score);
+        this.updateScore(this.score);
+    };
+    Score.prototype.updateScore = function (score) {
+        this.div.remove();
+        console.log("remove div");
+        this.div = document.createElement("score");
+        document.body.appendChild(this.div).innerHTML = score;
     };
     return Score;
 }());
