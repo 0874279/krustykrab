@@ -5,19 +5,32 @@ class Question{
     public code:Array<number> = []
     private randnumber:number;
     private game:startGame;
+    private div:HTMLElement;
+    private stringIngredients:Array<string> = ["leeg","bread", "cheese", "ketchup", "lettuce", "mustard", "patty", "pickles", "tomatoes"]
+    private question:string = "The order is: ";
 
 
     constructor(){
         this.codeGenerator();
+        
+    }
+
+    // create a question in div
+    private createDiv(question){
+        this.div = document.createElement("question");
+        document.body.appendChild(this.div).innerHTML = question; 
     }
 
     // generates a random 5 digit array into this.code
-    codeGenerator(){
+    private codeGenerator(){
         while (this.code.length < 5){
             this.randnumber = Math.ceil(Math.random()*8)
             if(this.code.indexOf(this.randnumber) > -1) continue;
             this.code[this.code.length] = this.randnumber;
+        }  
+        for (let i=0; i<5 ; i++){
+        this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
+        this.createDiv(this.question);
         }
-        console.log(this.code)
     }
 }    

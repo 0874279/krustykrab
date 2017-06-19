@@ -110,6 +110,7 @@ lives3{
     left: 80%;
     top: 10%
 }
+
 lives2{
     background-color: red; 
     background-size: inherit;
@@ -118,11 +119,21 @@ lives2{
     left: 80%;
     top: 10%
 }
+
 lives1{
     background-color: red; 
     background-size: inherit;
     width: 50px;
     height: 50px;
     left: 80%;
+    top: 10%
+}
+
+question{
+    background-color: red; 
+    background-size: inherit;
+    width: 200px;
+    height: 50px;
+    left: 50%;
     top: 10%
 }

@@ -28,7 +28,6 @@ class startGame{
     if (this.player.lives.roundOver == true){
         // Round over, create new round if player has > 0 lives
         if (this.player.lives.live > 0){
-        console.log("New round should start!")
         this.question.code = [];
         this.player.answer = [];
         this.player.lives.roundOver = false;

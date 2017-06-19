@@ -39,7 +39,6 @@ class Score{
     // updates scorediv
     private updateScore(score){
         this.div.remove();
-        console.log("remove div")
         this.div = document.createElement("score");
         document.body.appendChild(this.div).innerHTML="Score: " + score;
     }

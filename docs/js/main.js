@@ -171,7 +171,6 @@ var startGame = (function () {
         this.createIngredients.takeTomatoes();
         if (this.player.lives.roundOver == true) {
             if (this.player.lives.live > 0) {
-                console.log("New round should start!");
                 this.question.code = [];
                 this.player.answer = [];
                 this.player.lives.roundOver = false;
@@ -260,8 +259,14 @@ var Player = (function () {
 var Question = (function () {
     function Question() {
         this.code = [];
+        this.stringIngredients = ["leeg", "bread", "cheese", "ketchup", "lettuce", "mustard", "patty", "pickles", "tomatoes"];
+        this.question = "The order is: ";
         this.codeGenerator();
     }
+    Question.prototype.createDiv = function (question) {
+        this.div = document.createElement("question");
+        document.body.appendChild(this.div).innerHTML = question;
+    };
     Question.prototype.codeGenerator = function () {
         while (this.code.length < 5) {
             this.randnumber = Math.ceil(Math.random() * 8);
@@ -269,7 +274,10 @@ var Question = (function () {
                 continue;
             this.code[this.code.length] = this.randnumber;
         }
-        console.log(this.code);
+        for (var i = 0; i < 5; i++) {
+            this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
+            this.createDiv(this.question);
+        }
     };
     return Question;
 }());
@@ -431,7 +439,6 @@ var Score = (function () {
     };
     Score.prototype.updateScore = function (score) {
         this.div.remove();
-        console.log("remove div");
         this.div = document.createElement("score");
         document.body.appendChild(this.div).innerHTML = "Score: " + score;
     };
