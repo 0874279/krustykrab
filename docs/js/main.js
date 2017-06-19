@@ -381,11 +381,23 @@ var Lives = (function () {
     function Lives() {
         this.live = 3;
         this.roundOver = false;
-        console.log("You start with " + this.live + " lives, good luck!");
+        this.createDiv();
     }
+    Lives.prototype.createDiv = function () {
+        this.div = document.createElement("lives3");
+        document.body.appendChild(this.div);
+    };
     Lives.prototype.loseLives = function () {
         this.live -= 1;
-        console.log("RIP MA NIGGA" + this.live);
+        if (this.live == 2) {
+            this.div.remove();
+            this.div = document.createElement("lives2");
+        }
+        else {
+            this.div.remove();
+            this.div = document.createElement("lives1");
+        }
+        document.body.appendChild(this.div);
         this.roundOver = true;
     };
     Lives.prototype.gameOver = function () {
@@ -400,8 +412,7 @@ var Score = (function () {
     }
     Score.prototype.createDiv = function (score) {
         this.div = document.createElement("score");
-        document.body.appendChild(this.div).innerHTML = score;
-        console.log("wordt deze geprint?");
+        document.body.appendChild(this.div).innerHTML = "Score: " + score;
     };
     Score.prototype.checkAnswer = function () {
         if (this.game.question.code.length == this.game.player.answer.length) {
@@ -422,7 +433,7 @@ var Score = (function () {
         this.div.remove();
         console.log("remove div");
         this.div = document.createElement("score");
-        document.body.appendChild(this.div).innerHTML = score;
+        document.body.appendChild(this.div).innerHTML = "Score: " + score;
     };
     return Score;
 }());

@@ -13,8 +13,7 @@ class Score{
 
     private createDiv(score){ // creates score div
         this.div = document.createElement("score");
-        document.body.appendChild(this.div).innerHTML=score;
-        console.log("wordt deze geprint?")
+        document.body.appendChild(this.div).innerHTML="Score: " + score;
     }
 
     // checks if given awnser is correct
@@ -42,7 +41,7 @@ class Score{
         this.div.remove();
         console.log("remove div")
         this.div = document.createElement("score");
-        document.body.appendChild(this.div).innerHTML=score;
+        document.body.appendChild(this.div).innerHTML="Score: " + score;
     }
 
 

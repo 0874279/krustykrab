@@ -6,13 +6,26 @@ class Lives{
     public roundOver:boolean = false
 
     constructor(){
-        console.log("You start with "+ this.live + " lives, good luck!")
+        this.createDiv();
     }
 
-    // wrong combination, lose 1 life
+    private createDiv(){ // creates lives div
+        this.div = document.createElement("lives3");
+        document.body.appendChild(this.div);        
+    }
+
+    // wrong combination, lose 1 life & update div
     public loseLives(){
         this.live -= 1;
-        console.log("RIP MA NIGGA" + this.live);
+        if (this.live == 2){
+            this.div.remove();
+            this.div = document.createElement("lives2");
+        }
+        else {
+            this.div.remove()
+            this.div = document.createElement("lives1");
+        }
+        document.body.appendChild(this.div);
         this.roundOver = true;
 
     }
