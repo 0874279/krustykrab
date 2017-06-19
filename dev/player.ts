@@ -5,7 +5,7 @@ class Player{
     public div:HTMLElement; // player div
     public score:Score; // score
     public lives:Lives; // lives
-    public answer:Array<number> = []; // player answer
+    public answer:Array<number> = []; // player answer(combination of ingredients)
 
     // position
     public x:number = 0;
