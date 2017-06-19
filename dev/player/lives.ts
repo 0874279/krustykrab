@@ -17,7 +17,7 @@ class Lives{
 
     }
 
-    // if all lives lost, game over
+    // if all 3 lives lost, game over
     private gameOver(){
 
     }
