@@ -3,7 +3,7 @@
 class Game{
     public startGame:startGame; // starts the game
     private div:HTMLElement; // button to create game
-    private ingredients:Ingredients
+    private ingredients:Ingredients //set ingredients
 
     constructor(){
         this.createDiv();

@@ -6,7 +6,7 @@ class startGame{
     question:Question;
 
     constructor(){
-        console.log("Welcome to the new game!")
+        console.log("Welcome to Krusty Krab!")
         this.createIngredients = new createIngredients(this); // creates ingredients
         this.player = new Player(this);
         this.question = new Question;

@@ -18,8 +18,8 @@ class Score{
         if (this.game.question.code.toString() == this.game.player.answer.toString()){
             this.roundWon();
         }
-        else{
-            this.game.player.lives.loseLives();
+            else{
+                this.game.player.lives.loseLives();
             }
         }   
     }
