@@ -1,0 +1,139 @@
+html, body {
+    background-image: url(../images/background.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    margin:0px; padding:0px;
+    background-size: cover;
+}
+
+body * {
+    position: absolute;
+    display: block;
+    margin:0px; padding:0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+startBtn{
+    background-color: black;
+    width: 300px;
+    height: 100px;
+}
+
+player{
+    background-image: url(../images/spongebob1.png);
+    /*background-color: yellow; */
+    background-size: inherit;
+    width: 50px;
+    height: 50px;
+}
+
+bread{
+    background-color: brown; 
+    background-size: inherit;
+    width: 50px;
+    height: 50px;
+}
+
+patty{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+}
+
+cheese{
+    background-color: lightblue;
+    width: 50px;
+    height: 50px;
+}
+
+lettuce{
+    background-color: pink;
+    width: 50px;
+    height: 50px;
+}
+
+tomatoes{
+    background-color: violet;
+    width: 50px;
+    height: 50px;
+}
+
+ketchup{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+}
+
+mustard{
+    background-color: gold;
+    width: 50px;
+    height: 50px;
+}
+
+pickles{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+}
+
+lives{
+    background-color: silver;
+    width: 50px;
+    height: 50px;
+}
+
+startBtn{
+    background-image: url(../images/play.png);
+    background-color: transparent; 
+    width: 511px;
+    height: 182px;
+   
+}
+
+score{
+    background-color: whitesmoke; 
+    background-size: inherit;
+    width: 100px;
+    height: 50px;
+    left: 80%;
+    top: 5%
+}
+
+lives3{
+    background-color: red; 
+    background-size: inherit;
+    width: 150px;
+    height: 50px;
+    left: 80%;
+    top: 10%
+}
+
+lives2{
+    background-color: red; 
+    background-size: inherit;
+    width: 100px;
+    height: 50px;
+    left: 80%;
+    top: 10%
+}
+
+lives1{
+    background-color: red; 
+    background-size: inherit;
+    width: 50px;
+    height: 50px;
+    left: 80%;
+    top: 10%
+}
+
+question{
+    background-color: red; 
+    background-size: inherit;
+    width: 200px;
+    height: 50px;
+    left: 50%;
+    top: 10%
+}
