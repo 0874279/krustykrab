@@ -1,7 +1,7 @@
 /// <reference path="../player.ts"/>
 
 class Lives{
-    private div:HTMLElement;
+    public div:HTMLElement;
     public live:number = 3;
     public roundOver:boolean = false
 

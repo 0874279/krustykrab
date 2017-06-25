@@ -2,15 +2,15 @@
 
 class createIngredients{
     //ingredients
-    private bread:Bread;
-    private cheese:Cheese;
-    private ketchup:Ketchup;
-    private lettuce:Lettuce;
-    private mustard:Mustard;
-    private patty:Patty;
-    private pickles:Pickles;
-    private tomatoes:Tomatoes;
-    private game:startGame;
+    public bread:Bread;
+    public cheese:Cheese;
+    public ketchup:Ketchup;
+    public lettuce:Lettuce;
+    public mustard:Mustard;
+    public patty:Patty;
+    public pickles:Pickles;
+    public tomatoes:Tomatoes;
+    public game:startGame;
     
     //booleans so
     private breadB:boolean = true;

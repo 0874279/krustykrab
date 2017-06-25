@@ -5,14 +5,14 @@ class Question{
     public code:Array<number> = []
     private randnumber:number;
     private game:startGame;
-    private div:HTMLElement;
+    public div:HTMLElement;
     private stringIngredients:Array<string> = ["leeg","bread", "cheese", "ketchup", "lettuce", "mustard", "patty", "pickles", "tomatoes"]
     private question:string = "Make me a krabbypatty with: ";
 
 
     constructor(){
         this.codeGenerator();
-        
+        // this.div.remove();
     }
 
     // create a question in div
@@ -32,7 +32,8 @@ class Question{
         }  
         for (let i=0; i<5 ; i++){
         this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
-        this.createDiv(this.question);
-        }
+        
     }
-}    
+    this.createDiv(this.question);
+}
+}

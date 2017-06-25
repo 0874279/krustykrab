@@ -2,7 +2,6 @@
 
 class Cheese extends Ingredients{
 
-    protected ingredient:HTMLElement;
     public x:number;
     public y:number;
     public key:number = 2;
@@ -11,7 +10,7 @@ class Cheese extends Ingredients{
         super();
         this.ingredient = document.createElement("cheese");
         this.x = 200;
-        this.y = 500;
+        this.y = 600;
         this.createDiv(this.ingredient, this.x, this.y);
 
     }

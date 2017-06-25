@@ -1,9 +1,10 @@
 /// <reference path="game.ts"/>
 
 class startGame{
-    player:Player;
-    createIngredients:createIngredients;
-    question:Question;
+    public player:Player;
+    public createIngredients:createIngredients;
+    public question:Question;
+    private gameover:gameOver;
 
     constructor(){
         console.log("Welcome to Krusty Krab!")
@@ -34,6 +35,7 @@ class startGame{
         this.question = new Question;
         this.createIngredients.setTrue();
         console.log(this.player.answer);
+        this.question.div.remove();
         this.player.x = 0
         this.player.y = 0
         requestAnimationFrame(this.gameLoop.bind(this));
@@ -41,6 +43,8 @@ class startGame{
         // game over
         else {
             console.log("game over")
+            this.gameover = new gameOver(this);
+
         }
     }
     else{

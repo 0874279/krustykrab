@@ -131,6 +131,8 @@ var Game = (function () {
         var _this = this;
         this.div = document.createElement("startBtn");
         document.body.appendChild(this.div).addEventListener("click", function () { return _this.createGame(); });
+        this.help = document.createElement("help");
+        document.body.appendChild(this.help).innerHTML = "Hey Spongebob, you have to make some krabbypatties today. Move with WASD to grab the ingredients and make sure to follow the orders from Squidward. Good luck!";
     };
     Game.prototype.createGame = function () {
         this.div.remove();
@@ -138,17 +140,6 @@ var Game = (function () {
         this.startGame = new startGame;
     };
     return Game;
-}());
-var Ingredients = (function () {
-    function Ingredients() {
-        this.width = 50;
-        this.height = 50;
-    }
-    Ingredients.prototype.createDiv = function (ingredient, x, y) {
-        document.body.appendChild(ingredient);
-        ingredient.style.transform = "translate(" + x + "px," + 600 + "px)";
-    };
-    return Ingredients;
 }());
 var startGame = (function () {
     function startGame() {
@@ -177,12 +168,14 @@ var startGame = (function () {
                 this.question = new Question;
                 this.createIngredients.setTrue();
                 console.log(this.player.answer);
+                this.question.div.remove();
                 this.player.x = 0;
                 this.player.y = 0;
                 requestAnimationFrame(this.gameLoop.bind(this));
             }
             else {
                 console.log("game over");
+                this.gameover = new gameOver(this);
             }
         }
         else {
@@ -190,6 +183,47 @@ var startGame = (function () {
         }
     };
     return startGame;
+}());
+var gameOver = (function () {
+    function gameOver(g) {
+        var _this = this;
+        this.game = g;
+        this.game.question.div.remove();
+        this.game.player.div.remove();
+        this.game.player.lives.div.remove();
+        this.game.player.score.div.remove();
+        this.game.createIngredients.bread.ingredient.remove();
+        this.game.createIngredients.cheese.ingredient.remove();
+        this.game.createIngredients.ketchup.ingredient.remove();
+        this.game.createIngredients.lettuce.ingredient.remove();
+        this.game.createIngredients.mustard.ingredient.remove();
+        this.game.createIngredients.patty.ingredient.remove();
+        this.game.createIngredients.pickles.ingredient.remove();
+        this.game.createIngredients.tomatoes.ingredient.remove();
+        this.div = document.createElement("gameover");
+        document.body.appendChild(this.div).innerHTML = "SPONGEBOB YOU'RE FIRED!, your score was: " + this.game.player.score.score + ".";
+        this.playAgain = document.createElement("startBtn");
+        document.body.appendChild(this.playAgain).addEventListener("click", function () { return _this.createGame(); });
+    }
+    gameOver.prototype.createGame = function () {
+        this.div.remove();
+        this.div = undefined;
+        this.playAgain.remove();
+        this.playAgain = undefined;
+        this.game = new startGame;
+    };
+    return gameOver;
+}());
+var Ingredients = (function () {
+    function Ingredients() {
+        this.width = 50;
+        this.height = 50;
+    }
+    Ingredients.prototype.createDiv = function (ingredient, x, y) {
+        document.body.appendChild(ingredient);
+        ingredient.style.transform = "translate(" + x + "px," + 600 + "px)";
+    };
+    return Ingredients;
 }());
 var Player = (function () {
     function Player(g) {
@@ -276,8 +310,8 @@ var Question = (function () {
         }
         for (var i = 0; i < 5; i++) {
             this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
-            this.createDiv(this.question);
         }
+        this.createDiv(this.question);
     };
     return Question;
 }());
@@ -288,7 +322,7 @@ var Bread = (function (_super) {
         _this.key = 1;
         _this.ingredient = document.createElement("bread");
         _this.x = 100;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -301,7 +335,7 @@ var Cheese = (function (_super) {
         _this.key = 2;
         _this.ingredient = document.createElement("cheese");
         _this.x = 200;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -314,7 +348,7 @@ var Ketchup = (function (_super) {
         _this.key = 3;
         _this.ingredient = document.createElement("ketchup");
         _this.x = 300;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -327,7 +361,7 @@ var Lettuce = (function (_super) {
         _this.key = 4;
         _this.ingredient = document.createElement("lettuce");
         _this.x = 400;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -340,7 +374,7 @@ var Mustard = (function (_super) {
         _this.key = 5;
         _this.ingredient = document.createElement("mustard");
         _this.x = 500;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -353,7 +387,7 @@ var Patty = (function (_super) {
         _this.key = 6;
         _this.ingredient = document.createElement("patty");
         _this.x = 600;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -366,7 +400,7 @@ var Pickles = (function (_super) {
         _this.key = 7;
         _this.ingredient = document.createElement("pickles");
         _this.x = 700;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
@@ -379,7 +413,7 @@ var Tomatoes = (function (_super) {
         _this.key = 8;
         _this.ingredient = document.createElement("tomatoes");
         _this.x = 800;
-        _this.y = 500;
+        _this.y = 600;
         _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }

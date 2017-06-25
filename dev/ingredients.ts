@@ -1,9 +1,6 @@
 
 class Ingredients{
-    // div
-    protected div:HTMLElement;
-
-
+    public ingredient:HTMLElement;
 
     // size
     public width:number = 50;

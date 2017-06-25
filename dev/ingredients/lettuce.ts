@@ -2,7 +2,6 @@
 
 class Lettuce extends Ingredients{
 
-    protected ingredient:HTMLElement;
     public x:number;
     public y:number;
     public key:number = 4;
@@ -11,7 +10,7 @@ class Lettuce extends Ingredients{
         super();
         this.ingredient = document.createElement("lettuce");
         this.x = 400;
-        this.y = 500;
+        this.y = 600;
         this.createDiv(this.ingredient, this.x, this.y);
 
     }

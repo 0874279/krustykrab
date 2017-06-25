@@ -1,8 +1,8 @@
 /// <reference path="../player.ts"/>
 
 class Score{
-    private div:HTMLElement;
-    private score:number = 0;
+    public div:HTMLElement;
+    public score:number = 0;
     private game:startGame;
 
 
