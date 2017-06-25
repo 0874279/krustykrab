@@ -1,7 +1,7 @@
 # KrustyKrab
 Assignment for PRGM04
 
-By Orlando Duivestein and Jerrson Pires
+By Orlando Duivestein and Jersson Pires
 
 Link: https://0874279.github.io/krustykrab/
 
@@ -33,3 +33,5 @@ Our project uses al lot of private, public and protected functions and variables
 Example: Class game has Class startGame, Class startGame has Classes player, createIngredients, question and gameover. Class player has Class score and lives.
 
 # UML
+
+![alt text](https://github.com/0874279/krustykrab/blob/master/UML_KK.png)
