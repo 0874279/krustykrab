@@ -24,63 +24,63 @@ startBtn{
 
 player{
     background-image: url(../images/spongebob1.png);
-    /*background-color: yellow; */
     background-size: inherit;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
 }
 
 bread{
-    background-color: brown; 
+    background-image: url(../images/bread.png);
     background-size: inherit;
     width: 50px;
     height: 50px;
 }
 
 patty{
-    background-color: blue;
+    background-image: url(../images/patty.png);
+    background-size: inherit;
     width: 50px;
     height: 50px;
 }
 
 cheese{
-    background-color: lightblue;
+    background-image: url(../images/cheese.png);
+    background-size: inherit;
     width: 50px;
     height: 50px;
 }
 
 lettuce{
-    background-color: pink;
+    background-image: url(../images/lettuce.png);
+    background-size: inherit;
     width: 50px;
     height: 50px;
 }
 
 tomatoes{
-    background-color: violet;
-    width: 50px;
+    background-image: url(../images/tomatoes.png);
+    background-size: inherit;
+    width: 60px;
     height: 50px;
 }
 
 ketchup{
-    background-color: red;
-    width: 50px;
-    height: 50px;
+    background-image: url(../images/ketchup.png);
+    background-size: inherit;
+    width: 55px;
+    height: 115px;
 }
 
 mustard{
-    background-color: gold;
-    width: 50px;
-    height: 50px;
+    background-image: url(../images/mustard.png);
+    background-size: inherit;
+    width: 55px;
+    height: 115px;
 }
 
 pickles{
-    background-color: green;
-    width: 50px;
-    height: 50px;
-}
-
-lives{
-    background-color: silver;
+    background-image: url(../images/pickles.png);
+    background-size: inherit;
     width: 50px;
     height: 50px;
 }

@@ -12,7 +12,7 @@ class Tomatoes extends Ingredients{
         this.ingredient = document.createElement("tomatoes");
         this.x = 800;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }

@@ -12,7 +12,7 @@ class Lettuce extends Ingredients{
         this.ingredient = document.createElement("lettuce");
         this.x = 400;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }

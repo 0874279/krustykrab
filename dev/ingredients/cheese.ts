@@ -12,7 +12,7 @@ class Cheese extends Ingredients{
         this.ingredient = document.createElement("cheese");
         this.x = 200;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }

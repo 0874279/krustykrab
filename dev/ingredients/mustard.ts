@@ -12,7 +12,7 @@ class Mustard extends Ingredients{
         this.ingredient = document.createElement("mustard");
         this.x = 500;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }

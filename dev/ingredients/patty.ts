@@ -12,7 +12,7 @@ class Patty extends Ingredients{
         this.ingredient = document.createElement("patty");
         this.x = 600;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }

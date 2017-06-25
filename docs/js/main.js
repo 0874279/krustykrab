@@ -144,8 +144,8 @@ var Ingredients = (function () {
         this.width = 50;
         this.height = 50;
     }
-    Ingredients.prototype.createDiv = function (ingredient, x, y, key) {
-        document.body.appendChild(ingredient).innerHTML = key;
+    Ingredients.prototype.createDiv = function (ingredient, x, y) {
+        document.body.appendChild(ingredient);
         ingredient.style.transform = "translate(" + x + "px," + y + "px)";
     };
     return Ingredients;
@@ -289,7 +289,7 @@ var Bread = (function (_super) {
         _this.ingredient = document.createElement("bread");
         _this.x = 100;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Bread;
@@ -302,7 +302,7 @@ var Cheese = (function (_super) {
         _this.ingredient = document.createElement("cheese");
         _this.x = 200;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Cheese;
@@ -315,7 +315,7 @@ var Ketchup = (function (_super) {
         _this.ingredient = document.createElement("ketchup");
         _this.x = 300;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Ketchup;
@@ -328,7 +328,7 @@ var Lettuce = (function (_super) {
         _this.ingredient = document.createElement("lettuce");
         _this.x = 400;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Lettuce;
@@ -341,7 +341,7 @@ var Mustard = (function (_super) {
         _this.ingredient = document.createElement("mustard");
         _this.x = 500;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Mustard;
@@ -354,7 +354,7 @@ var Patty = (function (_super) {
         _this.ingredient = document.createElement("patty");
         _this.x = 600;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Patty;
@@ -367,7 +367,7 @@ var Pickles = (function (_super) {
         _this.ingredient = document.createElement("pickles");
         _this.x = 700;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Pickles;
@@ -380,7 +380,7 @@ var Tomatoes = (function (_super) {
         _this.ingredient = document.createElement("tomatoes");
         _this.x = 800;
         _this.y = 500;
-        _this.createDiv(_this.ingredient, _this.x, _this.y, _this.key);
+        _this.createDiv(_this.ingredient, _this.x, _this.y);
         return _this;
     }
     return Tomatoes;

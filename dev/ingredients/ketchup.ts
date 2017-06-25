@@ -12,7 +12,7 @@ class Ketchup extends Ingredients{
         this.ingredient = document.createElement("ketchup");
         this.x = 300;
         this.y = 500;
-        this.createDiv(this.ingredient, this.x, this.y, this.key);
+        this.createDiv(this.ingredient, this.x, this.y);
 
     }
 }
