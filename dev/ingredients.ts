@@ -16,6 +16,6 @@ class Ingredients{
     // creates div for all ingredients
     protected createDiv(ingredient, x, y){
         document.body.appendChild(ingredient);
-        ingredient.style.transform ="translate("+x+"px,"+y+"px)";   
+        ingredient.style.transform ="translate("+x+"px,"+600+"px)";   
     }
 }

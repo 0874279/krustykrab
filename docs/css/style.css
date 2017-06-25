@@ -1,5 +1,6 @@
 html, body {
     background-image: url(../images/background.jpg);
+    background-size: inherit;
     font-family: Arial, Helvetica, sans-serif;
     overflow:hidden;
     margin:0px; padding:0px;
@@ -99,8 +100,9 @@ score{
     background-size: inherit;
     width: 100px;
     height: 50px;
+    border-style: solid;
     left: 80%;
-    top: 5%
+    top: 3%
 }
 
 lives3{
@@ -131,10 +133,11 @@ lives1{
 }
 
 question{
-    background-color: red; 
-    background-size: inherit;
-    width: 200px;
+    background-color: white;
+    background-size: contain;
+    border-style: solid;
+    width: 300px;
     height: 50px;
-    left: 50%;
-    top: 10%
+    left: 25%;
+    top: 50%;
 }

@@ -7,7 +7,7 @@ class Question{
     private game:startGame;
     private div:HTMLElement;
     private stringIngredients:Array<string> = ["leeg","bread", "cheese", "ketchup", "lettuce", "mustard", "patty", "pickles", "tomatoes"]
-    private question:string = "The order is: ";
+    private question:string = "Make me a krabbypatty with: ";
 
 
     constructor(){
@@ -18,7 +18,9 @@ class Question{
     // create a question in div
     private createDiv(question){
         this.div = document.createElement("question");
+
         document.body.appendChild(this.div).innerHTML = question; 
+
     }
 
     // generates a random 5 digit array into this.code

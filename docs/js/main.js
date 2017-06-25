@@ -146,7 +146,7 @@ var Ingredients = (function () {
     }
     Ingredients.prototype.createDiv = function (ingredient, x, y) {
         document.body.appendChild(ingredient);
-        ingredient.style.transform = "translate(" + x + "px," + y + "px)";
+        ingredient.style.transform = "translate(" + x + "px," + 600 + "px)";
     };
     return Ingredients;
 }());
@@ -260,7 +260,7 @@ var Question = (function () {
     function Question() {
         this.code = [];
         this.stringIngredients = ["leeg", "bread", "cheese", "ketchup", "lettuce", "mustard", "patty", "pickles", "tomatoes"];
-        this.question = "The order is: ";
+        this.question = "Make me a krabbypatty with: ";
         this.codeGenerator();
     }
     Question.prototype.createDiv = function (question) {
