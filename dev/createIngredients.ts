@@ -24,15 +24,8 @@ class createIngredients{
 
 
     constructor(g:startGame){
-        this.game = g
-        this.bread = new Bread;
-        this.cheese = new Cheese;
-        this.ketchup = new Ketchup;
-        this.lettuce = new Lettuce;
-        this.mustard = new Mustard;
-        this.patty = new Patty;
-        this.pickles = new Pickles;
-        this.tomatoes = new Tomatoes;
+        this.game = g;
+        this.createDivs();
     }
 
     public takeBread(){
@@ -42,6 +35,7 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.bread.y && this.breadB == true) {
                 this.breadB = false;
                 this.game.player.answer.push(this.bread.key);
+                this.bread.ingredient.remove();
             }  
     }
 
@@ -52,6 +46,8 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.cheese.y && this.cheeseB == true) {
                 this.cheeseB = false;
                 this.game.player.answer.push(this.cheese.key);
+                this.cheese.ingredient.remove();
+
             }  
     }
 
@@ -62,6 +58,8 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.ketchup.y && this.ketchupB == true) {
                 this.ketchupB = false;
                 this.game.player.answer.push(this.ketchup.key);
+                this.ketchup.ingredient.remove();
+
             }  
     }
 
@@ -72,6 +70,8 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.lettuce.y && this.lettuceB == true) {
                 this.lettuceB = false;
                 this.game.player.answer.push(this.lettuce.key);
+                this.lettuce.ingredient.remove();
+
             }  
     }
 
@@ -82,6 +82,7 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.mustard.y && this.mustardB == true) {
                 this.mustardB = false;
                 this.game.player.answer.push(this.mustard.key);
+                this.mustard.ingredient.remove();
             }  
     }
 
@@ -92,6 +93,7 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.patty.y && this.pattyB == true) {
                 this.pattyB = false;
                 this.game.player.answer.push(this.patty.key);
+                this.patty.ingredient.remove();
             }  
     }
 
@@ -102,6 +104,7 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.pickles.y && this.picklesB == true) {
                 this.picklesB = false;
                 this.game.player.answer.push(this.pickles.key);
+                this.pickles.ingredient.remove();
             }  
     }
     
@@ -112,11 +115,18 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.tomatoes.y && this.tomatoesB == true) {
                 this.tomatoesB = false;
                 this.game.player.answer.push(this.tomatoes.key);
+                this.tomatoes.ingredient.remove();
             }  
     }
 
+    public resetIngredients(){
+        this.setTrue();
+        this.removeDivs();
+        this.createDivs();
+    }
+
     // set makes sure everything can be taken again when round is over
-    public setTrue(){
+    private setTrue(){
         this.breadB = true;
         this.cheeseB = true;
         this.ketchupB = true;
@@ -125,6 +135,29 @@ class createIngredients{
         this.pattyB = true;
         this.picklesB = true;
         this.tomatoesB = true;
+
+    }
+
+    private removeDivs(){
+        this.bread.ingredient.remove();
+        this.cheese.ingredient.remove();
+        this.ketchup.ingredient.remove();
+        this.lettuce.ingredient.remove();
+        this.mustard.ingredient.remove();
+        this.patty.ingredient.remove();
+        this.pickles.ingredient.remove();
+        this.tomatoes.ingredient.remove();
+    }
+
+    private createDivs(){
+        this.bread = new Bread;
+        this.cheese = new Cheese;
+        this.ketchup = new Ketchup;
+        this.lettuce = new Lettuce;
+        this.mustard = new Mustard;
+        this.patty = new Patty;
+        this.pickles = new Pickles;
+        this.tomatoes = new Tomatoes;
     }
 
 }

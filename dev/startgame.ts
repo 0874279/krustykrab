@@ -33,7 +33,7 @@ class startGame{
         this.player.lives.roundOver = false;
         this.question.div.remove();
         this.question = new Question;
-        this.createIngredients.setTrue();
+        this.createIngredients.resetIngredients();
         this.player.x = 0
         this.player.y = 0
         requestAnimationFrame(this.gameLoop.bind(this));
