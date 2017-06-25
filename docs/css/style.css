@@ -23,10 +23,11 @@ startBtn{
 }
 
 player{
-    background-image: url(../images/spongebob1.png);
+    background-image: url(../images/Spongebob-squarepants.svg.png);
+    /*background-color: yellow; */
     background-size: inherit;
     width: 55px;
-    height: 55px;
+    height: 85px;
 }
 
 bread{
