@@ -12,13 +12,11 @@ class Question{
 
     constructor(){
         this.codeGenerator();
-        // this.div.remove();
     }
 
     // create a question in div
     private createDiv(question){
         this.div = document.createElement("question");
-
         document.body.appendChild(this.div).innerHTML = question; 
 
     }
@@ -34,10 +32,10 @@ class Question{
         this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
             if (i == 4){
                 this.createDiv(this.question);
+                
             }
 
-
-    }
+        }
 
 }
 }

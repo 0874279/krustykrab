@@ -475,7 +475,13 @@ var Score = (function () {
         this.div = document.createElement("score");
         document.body.appendChild(this.div).innerHTML = "Score: " + score;
     };
+    Score.prototype.hidequestion = function () {
+        if (this.game.player.answer.length == 1) {
+            this.game.question.div.remove();
+        }
+    };
     Score.prototype.checkAnswer = function () {
+        this.hidequestion();
         if (this.game.question.code.length == this.game.player.answer.length) {
             if (this.game.question.code.toString() == this.game.player.answer.toString()) {
                 this.roundWon();
