@@ -33,3 +33,5 @@ Our project uses al lot of private, public and protected functions and variables
 Example: Class game has Class startGame, Class startGame has Classes player, createIngredients, question and gameover. Class player has Class score and lives.
 
 # UML
+
+![alt text](krustykrab/ERD_KK.png)
