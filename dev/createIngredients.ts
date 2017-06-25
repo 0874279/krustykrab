@@ -118,7 +118,7 @@ class createIngredients{
                 this.tomatoes.ingredient.remove();
             }  
     }
-
+    // resets the ingredients 
     public resetIngredients(){
         this.setTrue();
         this.removeDivs();
