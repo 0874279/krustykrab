@@ -272,6 +272,21 @@ var Player = (function () {
         this.x = this.x - this.leftSpeed + this.rightSpeed;
         this.y = this.y - this.upSpeed + this.downSpeed;
         this.div.style.transform = "translate(" + this.x + "px," + this.y + "px)";
+        this.screenBob();
+    };
+    Player.prototype.screenBob = function () {
+        if (this.x <= 0) {
+            this.x = 0;
+        }
+        else if (this.x >= window.innerWidth - 60) {
+            this.x = window.innerWidth - 55;
+        }
+        else if (this.y <= 0) {
+            this.y = 0;
+        }
+        else if (this.y >= window.innerHeight - 90) {
+            this.y = window.innerHeight - 85;
+        }
     };
     Player.prototype.onKeyUp = function (event) {
         switch (event.keyCode) {

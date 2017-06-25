@@ -42,7 +42,25 @@ class Player{
         this.x = this.x - this.leftSpeed + this.rightSpeed;
         this.y = this.y - this.upSpeed + this.downSpeed;
         this.div.style.transform ="translate("+this.x+"px,"+this.y+"px)";
+        this.screenBob();
+
+
         
+    }
+     // Make sure SpongeBob cant get out of the screen
+    private screenBob(){
+            if (this.x <= 0){
+            this.x = 0
+            }
+            else if (this.x >= window.innerWidth - 60){
+            this.x = window.innerWidth - 55
+            }
+            else if (this.y <= 0){
+            this.y=0
+            }
+            else if (this.y >= window.innerHeight - 90){
+            this.y=window.innerHeight - 85
+            }
     }
     // stop moving
     private onKeyUp(event:KeyboardEvent):void {
