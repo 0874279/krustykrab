@@ -32,8 +32,12 @@ class Question{
         }  
         for (let i=0; i<5 ; i++){
         this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
-        
+            if (i == 4){
+                this.createDiv(this.question);
+            }
+
+
     }
-    this.createDiv(this.question);
+
 }
 }

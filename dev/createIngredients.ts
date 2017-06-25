@@ -42,7 +42,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.bread.y && this.breadB == true) {
                 this.breadB = false;
                 this.game.player.answer.push(this.bread.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -53,7 +52,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.cheese.y && this.cheeseB == true) {
                 this.cheeseB = false;
                 this.game.player.answer.push(this.cheese.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -64,7 +62,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.ketchup.y && this.ketchupB == true) {
                 this.ketchupB = false;
                 this.game.player.answer.push(this.ketchup.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -75,7 +72,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.lettuce.y && this.lettuceB == true) {
                 this.lettuceB = false;
                 this.game.player.answer.push(this.lettuce.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -86,7 +82,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.mustard.y && this.mustardB == true) {
                 this.mustardB = false;
                 this.game.player.answer.push(this.mustard.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -97,7 +92,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.patty.y && this.pattyB == true) {
                 this.pattyB = false;
                 this.game.player.answer.push(this.patty.key);
-                console.log(this.game.player.answer)
             }  
     }
 
@@ -108,7 +102,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.pickles.y && this.picklesB == true) {
                 this.picklesB = false;
                 this.game.player.answer.push(this.pickles.key);
-                console.log(this.game.player.answer)
             }  
     }
     
@@ -119,7 +112,6 @@ class createIngredients{
             this.game.player.height + this.game.player.y > this.tomatoes.y && this.tomatoesB == true) {
                 this.tomatoesB = false;
                 this.game.player.answer.push(this.tomatoes.key);
-                console.log(this.game.player.answer)
             }  
     }
 

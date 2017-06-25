@@ -22,7 +22,7 @@ class gameOver{
             this.game.createIngredients.tomatoes.ingredient.remove();
 
             this.div = document.createElement("gameover");
-            document.body.appendChild(this.div).innerHTML = "SPONGEBOB YOU'RE FIRED!, your score was: " + this.game.player.score.score + "."; 
+            document.body.appendChild(this.div).innerHTML = "SPONGEBOB, YOU'RE FIRED! your score is: " + this.game.player.score.score + "."; 
             this.playAgain = document.createElement("startBtn");
             document.body.appendChild(this.playAgain).addEventListener("click", ()=> this.createGame());
 

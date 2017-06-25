@@ -23,6 +23,8 @@ class Game{
     private createGame(){
         this.div.remove();
         this.div = undefined;
+        this.help.remove();
+        this.help = undefined;
         this.startGame = new startGame;
     }
 

@@ -35,7 +35,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.bread.y && this.breadB == true) {
             this.breadB = false;
             this.game.player.answer.push(this.bread.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takeCheese = function () {
@@ -45,7 +44,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.cheese.y && this.cheeseB == true) {
             this.cheeseB = false;
             this.game.player.answer.push(this.cheese.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takeKetchup = function () {
@@ -55,7 +53,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.ketchup.y && this.ketchupB == true) {
             this.ketchupB = false;
             this.game.player.answer.push(this.ketchup.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takeLettuce = function () {
@@ -65,7 +62,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.lettuce.y && this.lettuceB == true) {
             this.lettuceB = false;
             this.game.player.answer.push(this.lettuce.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takeMustard = function () {
@@ -75,7 +71,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.mustard.y && this.mustardB == true) {
             this.mustardB = false;
             this.game.player.answer.push(this.mustard.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takePatty = function () {
@@ -85,7 +80,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.patty.y && this.pattyB == true) {
             this.pattyB = false;
             this.game.player.answer.push(this.patty.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takePickles = function () {
@@ -95,7 +89,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.pickles.y && this.picklesB == true) {
             this.picklesB = false;
             this.game.player.answer.push(this.pickles.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.takeTomatoes = function () {
@@ -105,7 +98,6 @@ var createIngredients = (function () {
             this.game.player.height + this.game.player.y > this.tomatoes.y && this.tomatoesB == true) {
             this.tomatoesB = false;
             this.game.player.answer.push(this.tomatoes.key);
-            console.log(this.game.player.answer);
         }
     };
     createIngredients.prototype.setTrue = function () {
@@ -137,13 +129,14 @@ var Game = (function () {
     Game.prototype.createGame = function () {
         this.div.remove();
         this.div = undefined;
+        this.help.remove();
+        this.help = undefined;
         this.startGame = new startGame;
     };
     return Game;
 }());
 var startGame = (function () {
     function startGame() {
-        console.log("Welcome to Krusty Krab!");
         this.createIngredients = new createIngredients(this);
         this.player = new Player(this);
         this.question = new Question;
@@ -165,16 +158,14 @@ var startGame = (function () {
                 this.question.code = [];
                 this.player.answer = [];
                 this.player.lives.roundOver = false;
+                this.question.div.remove();
                 this.question = new Question;
                 this.createIngredients.setTrue();
-                console.log(this.player.answer);
-                this.question.div.remove();
                 this.player.x = 0;
                 this.player.y = 0;
                 requestAnimationFrame(this.gameLoop.bind(this));
             }
             else {
-                console.log("game over");
                 this.gameover = new gameOver(this);
             }
         }
@@ -201,7 +192,7 @@ var gameOver = (function () {
         this.game.createIngredients.pickles.ingredient.remove();
         this.game.createIngredients.tomatoes.ingredient.remove();
         this.div = document.createElement("gameover");
-        document.body.appendChild(this.div).innerHTML = "SPONGEBOB YOU'RE FIRED!, your score was: " + this.game.player.score.score + ".";
+        document.body.appendChild(this.div).innerHTML = "SPONGEBOB, YOU'RE FIRED! your score is: " + this.game.player.score.score + ".";
         this.playAgain = document.createElement("startBtn");
         document.body.appendChild(this.playAgain).addEventListener("click", function () { return _this.createGame(); });
     }
@@ -310,8 +301,10 @@ var Question = (function () {
         }
         for (var i = 0; i < 5; i++) {
             this.question = this.question + this.stringIngredients[this.code[i]] + ", ";
+            if (i == 4) {
+                this.createDiv(this.question);
+            }
         }
-        this.createDiv(this.question);
     };
     return Question;
 }());

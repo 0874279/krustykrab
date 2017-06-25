@@ -7,7 +7,6 @@ class startGame{
     private gameover:gameOver;
 
     constructor(){
-        console.log("Welcome to Krusty Krab!")
         this.createIngredients = new createIngredients(this); // creates ingredients
         this.player = new Player(this);
         this.question = new Question;
@@ -32,17 +31,15 @@ class startGame{
         this.question.code = [];
         this.player.answer = [];
         this.player.lives.roundOver = false;
+        this.question.div.remove();
         this.question = new Question;
         this.createIngredients.setTrue();
-        console.log(this.player.answer);
-        this.question.div.remove();
         this.player.x = 0
         this.player.y = 0
         requestAnimationFrame(this.gameLoop.bind(this));
     }
         // game over
         else {
-            console.log("game over")
             this.gameover = new gameOver(this);
 
         }
