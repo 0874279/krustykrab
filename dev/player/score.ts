@@ -17,7 +17,7 @@ class Score{
     }
     // hides the question when first ingredient is picked up
     public hidequestion(){
-        if (this.game.player.answer.length = 2){
+        if (this.game.player.answer.length === 2){
             this.game.question.div.remove();
         }
     }
