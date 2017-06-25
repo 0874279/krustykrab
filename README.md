@@ -27,7 +27,9 @@ To install this game, simply copy the docs folder and paste it into your own ser
 All the ingredients that are used to make the burgers are inherited from the class Ingredients.
 
 * Encapsulation
+Our project uses al lot of private, public and protected functions and variables. For instance the Class player, with public and private instances and functions.
 
 * Composition
+Example: Class game has Class startGame, Class startGame has Classes player, createIngredients, question and gameover. Class player has Class score and lives.
 
 # UML
