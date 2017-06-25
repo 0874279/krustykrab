@@ -1,7 +1,7 @@
 # KrustyKrab
 Assignment for PRGM04
 
-By Orlando Duivestein and Jerrson Pires
+By Orlando Duivestein and Jersson Pires
 
 Link: https://0874279.github.io/krustykrab/
 
