@@ -8,6 +8,69 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+window.addEventListener("load", function () {
+    new Game();
+});
+var Game = (function () {
+    function Game() {
+        this.createDiv();
+    }
+    Game.prototype.createDiv = function () {
+        var _this = this;
+        this.div = document.createElement("startBtn");
+        document.body.appendChild(this.div).addEventListener("click", function () { return _this.createGame(); });
+        this.help = document.createElement("help");
+        document.body.appendChild(this.help).innerHTML = "Hey Spongebob, you have to make some krabbypatties today. Move with WASD to grab the ingredients and make sure to follow the orders from Squidward. Good luck!";
+    };
+    Game.prototype.createGame = function () {
+        this.div.remove();
+        this.div = undefined;
+        this.help.remove();
+        this.help = undefined;
+        this.startGame = new startGame;
+    };
+    return Game;
+}());
+var startGame = (function () {
+    function startGame() {
+        this.createIngredients = new createIngredients(this);
+        this.player = new Player(this);
+        this.question = new Question;
+        requestAnimationFrame(this.gameLoop.bind(this));
+    }
+    startGame.prototype.gameLoop = function () {
+        this.player.move();
+        this.player.score.checkAnswer();
+        this.createIngredients.takeBread();
+        this.createIngredients.takeCheese();
+        this.createIngredients.takeKetchup();
+        this.createIngredients.takeLettuce();
+        this.createIngredients.takeMustard();
+        this.createIngredients.takePatty();
+        this.createIngredients.takePickles();
+        this.createIngredients.takeTomatoes();
+        if (this.player.lives.roundOver == true) {
+            if (this.player.lives.live > 0) {
+                this.question.code = [];
+                this.player.answer = [];
+                this.player.lives.roundOver = false;
+                this.question.div.remove();
+                this.question = new Question;
+                this.createIngredients.resetIngredients();
+                this.player.x = 0;
+                this.player.y = 0;
+                requestAnimationFrame(this.gameLoop.bind(this));
+            }
+            else {
+                this.gameover = new gameOver(this);
+            }
+        }
+        else {
+            requestAnimationFrame(this.gameLoop.bind(this));
+        }
+    };
+    return startGame;
+}());
 var createIngredients = (function () {
     function createIngredients(g) {
         this.breadB = true;
@@ -137,69 +200,6 @@ var createIngredients = (function () {
         this.tomatoes = new Tomatoes;
     };
     return createIngredients;
-}());
-window.addEventListener("load", function () {
-    new Game();
-});
-var Game = (function () {
-    function Game() {
-        this.createDiv();
-    }
-    Game.prototype.createDiv = function () {
-        var _this = this;
-        this.div = document.createElement("startBtn");
-        document.body.appendChild(this.div).addEventListener("click", function () { return _this.createGame(); });
-        this.help = document.createElement("help");
-        document.body.appendChild(this.help).innerHTML = "Hey Spongebob, you have to make some krabbypatties today. Move with WASD to grab the ingredients and make sure to follow the orders from Squidward. Good luck!";
-    };
-    Game.prototype.createGame = function () {
-        this.div.remove();
-        this.div = undefined;
-        this.help.remove();
-        this.help = undefined;
-        this.startGame = new startGame;
-    };
-    return Game;
-}());
-var startGame = (function () {
-    function startGame() {
-        this.createIngredients = new createIngredients(this);
-        this.player = new Player(this);
-        this.question = new Question;
-        requestAnimationFrame(this.gameLoop.bind(this));
-    }
-    startGame.prototype.gameLoop = function () {
-        this.player.move();
-        this.player.score.checkAnswer();
-        this.createIngredients.takeBread();
-        this.createIngredients.takeCheese();
-        this.createIngredients.takeKetchup();
-        this.createIngredients.takeLettuce();
-        this.createIngredients.takeMustard();
-        this.createIngredients.takePatty();
-        this.createIngredients.takePickles();
-        this.createIngredients.takeTomatoes();
-        if (this.player.lives.roundOver == true) {
-            if (this.player.lives.live > 0) {
-                this.question.code = [];
-                this.player.answer = [];
-                this.player.lives.roundOver = false;
-                this.question.div.remove();
-                this.question = new Question;
-                this.createIngredients.resetIngredients();
-                this.player.x = 0;
-                this.player.y = 0;
-                requestAnimationFrame(this.gameLoop.bind(this));
-            }
-            else {
-                this.gameover = new gameOver(this);
-            }
-        }
-        else {
-            requestAnimationFrame(this.gameLoop.bind(this));
-        }
-    };
-    return startGame;
 }());
 var gameOver = (function () {
     function gameOver(g) {

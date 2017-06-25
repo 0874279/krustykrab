@@ -1,3 +1,5 @@
+/// <reference path="startgame.ts"/>
+
 // This code generates ingredients
 
 class createIngredients{

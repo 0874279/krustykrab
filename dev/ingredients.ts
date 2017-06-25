@@ -1,3 +1,4 @@
+/// <reference path="createingredients.ts"/>
 
 class Ingredients{
     public ingredient:HTMLElement;
