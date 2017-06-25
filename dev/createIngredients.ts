@@ -137,7 +137,7 @@ class createIngredients{
         this.tomatoesB = true;
 
     }
-
+    // remove all ingredients when round is over
     private removeDivs(){
         this.bread.ingredient.remove();
         this.cheese.ingredient.remove();
@@ -148,7 +148,7 @@ class createIngredients{
         this.pickles.ingredient.remove();
         this.tomatoes.ingredient.remove();
     }
-
+    // create new ingredients when new round starts
     private createDivs(){
         this.bread = new Bread;
         this.cheese = new Cheese;
