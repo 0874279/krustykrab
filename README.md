@@ -34,4 +34,4 @@ Example: Class game has Class startGame, Class startGame has Classes player, cre
 
 # UML
 
-![alt text](https://github.com/0874279/krustykrab/blob/master/ERD_KK.png)
+![alt text](https://github.com/0874279/krustykrab/blob/master/UML_KK.png)
