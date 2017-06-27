@@ -24,7 +24,7 @@ To install this game, simply copy the docs folder and paste it into your own ser
 * Classes and Instances
 
 * Inheritance
-All the ingredients that are used to make the burgers are inherited from the class Ingredients.
+All the ingredients that are used to make the burgers are inherited from the class Ingredients.In the UML all the ingredients with inherintance have been put in one class, Ingredients(extend), instead of 8 seperate classes. This is done for convenience because the classes are extremly similar.
 
 * Encapsulation
 Our project uses al lot of private, public and protected functions and variables. For instance the Class player, with public and private instances and functions.
